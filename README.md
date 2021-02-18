@@ -1,6 +1,10 @@
 نویسنده : [@oYSoF](https://t.me/oysof)
+
 کانال : [@BuildYourMessenger](https://t.me/BuildYourMessenger)
+
 ربات نمونه : [@BuildYourMessengerBot](https://t.me/BuildYourMessengerBot)
+
+
 *
 برای فعالسازی فایل config.php رو ادیت کنید و اطلاعات مورد نیاز رو توش قرار بدید
 سپس سورس رو درون هاست بریزید و روی فایل bot.php ست وبهوک کنید
