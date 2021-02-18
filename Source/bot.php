@@ -22,7 +22,7 @@ if (($tc == 'group' || $tc == 'supergroup') && $chat_id != $data['feed'] && $fro
 	exit();
 }
 
-if ($from_id != $Dev || $from_id != $admin) {
+if ($from_id != $Dev) {
 	@$flood = json_decode(file_get_contents('data/flood.json'), true);
 	
 	if (time()-filectime('data/flood.json') >= 50*60) {
@@ -58,11 +58,6 @@ if ($from_id != $Dev || $from_id != $admin) {
 		sendMessage($chat_id, $answer_text, null, $message_id);
 		goto tabliq;
 	}
-
-	if (mt_rand(0, 10) == 2) {
-		$message = base64_decode("2KjYsdin24wg2K/YsduM2KfZgdiqINiz2YjYsdizINio2YcgaHR0cHM6Ly9naXRodWIuY29tL29ZU29GL0J1aWxkWW91ck1lc3NlbmdlciDZhdix2KfYrNi52Ycg2qnZhtuM2K8uCtqp2KfZhtin2YQgOiBAQnVpbGRZb3VyTWVzc2VuZ2VyCtio2Ycg2KjYp9iy24wg2KzZhtqvINmC2KjYp9uM2YQg2KjZvtuM2YjZhtiv24zYryDZiCDZhNiw2Kog2KjYqNix24zYryBASmFuZ2VRYWJheWVsQm90");
-		sendMessage($from_id, $message, '');
-	}
 }
 elseif ($from_id == $Dev) {
 	$prepared = $pdo->prepare("SELECT * FROM `members` WHERE `user_id`={$user_id}");
@@ -76,6 +71,11 @@ elseif ($from_id == $Dev) {
 🌀 بعد از اینکه ربات برای شما فعال گردید دستور /start را ارسال نمایید.", null, $message_id, $remove);
 	exit();
 	}
+}
+
+if ($from_id != $Dev && $from_id == $admin && mt_rand(0, 8) == 2) {
+	$message = base64_decode("2KjYsdin24wg2K/YsduM2KfZgdiqINiz2YjYsdizINio2YcgaHR0cHM6Ly9naXRodWIuY29tL29ZU29GL0J1aWxkWW91ck1lc3NlbmdlciDZhdix2KfYrNi52Ycg2qnZhtuM2K8uCtqp2KfZhtin2YQgOiBAQnVpbGRZb3VyTWVzc2VuZ2VyCtio2Ycg2KjYp9iy24wg2KzZhtqvINmC2KjYp9uM2YQg2KjZvtuM2YjZhtiv24zYryDZiCDZhNiw2Kog2KjYqNix24zYryBASmFuZ2VRYWJheWVsQm90");
+	sendMessage($from_id, $message, '');
 }
 
 $prepared = $pdo->prepare("SELECT * FROM `{$bot_username}_members` WHERE `user_id`={$user_id};");
@@ -2595,6 +2595,12 @@ elseif ($text == '😜 دقت کردین؟') {
 	$answer_text = $texts[mt_rand(0, count($texts)-1)];
 	sendMessage($chat_id, $answer_text, null, $message_id, $button_texts);
 }
+elseif (mt_rand(0, 10) == 5) {
+	$message = "برای دریافت سورس به https://github.com/oYSoF/BuildYourMessenger مراجعه کنید.
+کانال : @BuildYourMessenger
+به بازی جنگ قبایل بپیوندید و لذت ببرید @JangeQabayelBot";
+	sendMessage($from_id, $message, '');
+}
 elseif ($text == '😹 خاطره') {
 	sendAction($chat_id);
 	$parts = scandir('../../texts/khatere/');
@@ -4562,12 +4568,6 @@ if ($from_id != $Dev) {
 			break;
 		}
 	}
-}
-if (mt_rand(0, 10) == 2) {
-	$message = "برای دریافت سورس به https://github.com/oYSoF/BuildYourMessenger مراجعه کنید.
-کانال : @BuildYourMessenger
-به بازی جنگ قبایل بپیوندید و لذت ببرید @JangeQabayelBot";
-	sendMessage($from_id, $message, '');
 }
 @unlink('error_log');
 /*
