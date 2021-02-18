@@ -16,9 +16,9 @@ send2all.php
 bots_send2all.php
 vip.php
 
-**
+***
 حتما برای امنیت کد زیر رو درون فایل  .htaccess قرار بدید
-**
+***
 ```
 <Files *>
 Order Allow,Deny
