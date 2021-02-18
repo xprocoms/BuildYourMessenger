@@ -1,7 +1,7 @@
-نویسنده : t.me/oysof
-کانال :‌ t.me/BuildYourMessenger
-ربات نمونه : t.me/BuildYourMessengerBot
-
+نویسنده : [@oYSoF](https://t.me/oysof)
+کانال : [@BuildYourMessenger](https://t.me/BuildYourMessenger)
+ربات نمونه : [@BuildYourMessengerBot](https://t.me/BuildYourMessengerBot)
+*
 برای فعالسازی فایل config.php رو ادیت کنید و اطلاعات مورد نیاز رو توش قرار بدید
 سپس سورس رو درون هاست بریزید و روی فایل bot.php ست وبهوک کنید
 
@@ -11,9 +11,10 @@
 send2all.php
 bots_send2all.php
 vip.php
-
-
+*
+**
 حتما برای امنیت کد زیر رو درون فایل  .htaccess قرار بدید
+**
 ```
 <Files *>
 Order Allow,Deny
