@@ -24,4 +24,4 @@ vip.php
 Order Allow,Deny
 Deny from all
 Allow from 149.154.160.0/16 91.108.4.0/16
-</Files>```
+</Files>
